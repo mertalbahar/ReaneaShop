@@ -1,0 +1,25 @@
+@model List<ReaneaShopApp.Models.Product>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Product Index</h1>
+    @foreach (ReaneaShopApp.Models.Product prd in Model)
+    {
+        <div>
+            <h3>@prd.ProductName</h3>
+            <p>@prd.ProductSummary</p>
+            <p>@prd.ProductPrice</p>
+            <a href="/product/get/@prd.ProductId">Get Details</a>
+        </div>
+    }
+</body>
+
+</html>
