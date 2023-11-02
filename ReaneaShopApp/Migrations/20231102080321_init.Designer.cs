@@ -3,15 +3,15 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ReaneaShopApp.Models;
+using Repositories;
 
 #nullable disable
 
 namespace ReaneaShopApp.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20231101175028_ProductSeedData")]
-    partial class ProductSeedData
+    [Migration("20231102080321_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -19,7 +19,7 @@ namespace ReaneaShopApp.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.0");
 
-            modelBuilder.Entity("ReaneaShopApp.Models.Product", b =>
+            modelBuilder.Entity("Entities.Models.Product", b =>
                 {
                     b.Property<int>("ProductId")
                         .ValueGeneratedOnAdd()
