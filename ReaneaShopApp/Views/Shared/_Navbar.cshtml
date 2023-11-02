@@ -18,11 +18,12 @@
                 <li class="nav-item">
                     <a class="nav-link" asp-controller="Product" asp-action="Index">
                         <i class="fa-solid fa-list"></i>
-                        Ürünler
+                        Ürünler (@await Component.InvokeAsync("ProductSummary"))
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" asp-controller="Category" asp-action="Index">
+                        <i class="fa-solid fa-bars"></i>
                         Kategoriler
                     </a>
                 </li>
@@ -34,8 +35,10 @@
                 </li>
             </ul>
             <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-secondary" type="submit">Search</button>
+                <input class="form-control me-2" type="search" placeholder="Senin için bulalım?" aria-label="Search">
+                <button class="btn btn-outline-secondary" type="submit">
+                    <i class="fa fa-magnifying-glass"></i>
+                </button>
             </form>
         </div>
     </div>
