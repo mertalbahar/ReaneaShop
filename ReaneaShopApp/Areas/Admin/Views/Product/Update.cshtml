@@ -1,0 +1,43 @@
+@model Product
+
+<div class="text-center my-3">
+    <div class="display-6">Ürün Ekle</div>
+</div>
+
+<form method="POST" asp-action="Update" enctype="multipart/form-data">
+    <div class="text-danger" asp-validation-summary="All"></div>
+
+    <input type="hidden" asp-for="ProductId" />
+
+    <!-- <div class="form-group my-3">
+        <label asp-for="CategoryId">Kategori Adı</label>
+        <select class="form-control" asp-for="CategoryId" asp-items="@ViewBag.Categories"></select>
+    </div> -->
+    <div class="form-group my-3">
+        <label asp-for="ProductName">Ürün Adı</label>
+        <input class="form-control" type="text" asp-for="ProductName" />
+    </div>
+    <div class="form-group my-3">
+        <label asp-for="ProductSummary">Ürün Açıklaması</label>
+        <input class="form-control" type="text" asp-for="ProductSummary" />
+    </div>
+    <div class="form-group my-3">
+        <label asp-for="ProductPrice">Birim Fiyat</label>
+        <input class="form-control" type="text" asp-for="ProductPrice" />
+    </div>
+    <!-- <div class="form-group my-3">
+        <label asp-for="ImageUrl">Image Url</label>
+        <input class="form-control" type="file" name="file" />
+    </div> -->
+
+    <div class="form-group my-3">
+        <div class="btn-group">
+            <button type="submit" class="btn btn-outline-success">
+                <i class="fa fa-save"></i> Güncelle
+            </button>
+            <a class="btn btn-outline-primary" asp-action="Index">
+                <i class="fa fa-list"></i> Ürünler
+                </a>
+        </div>
+    </div>
+</form>
