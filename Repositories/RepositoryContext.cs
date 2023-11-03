@@ -22,7 +22,7 @@ namespace Repositories
                 new Product() { ProductId = 3, ProductName = "Üçgen turuncu toka", ProductSummary = "Üçgen turuncu toka", ProductPrice = 250 },
                 new Product() { ProductId = 4, ProductName = "Cüzdan 1", ProductSummary = "Cüzdan 1", ProductPrice = 37 },
                 new Product() { ProductId = 5, ProductName = "Cüzdan 2", ProductSummary = "Cüzdan 2", ProductPrice = 3_865 },
-                new Product() { ProductId = 6, ProductName = "Cüzdan 3", ProductSummary = "Ayakkabı kokulu", ProductPrice = 805 },
+                new Product() { ProductId = 6, ProductName = "Cüzdan 3", ProductSummary = "Cüzdan 3", ProductPrice = 805 },
                 new Product() { ProductId = 7, ProductName = "Pembe baykuş anahtarlık", ProductSummary = "Pembe baykuş anahtarlık", ProductPrice = 120 },
                 new Product() { ProductId = 8, ProductName = "Sarı baykuş anahtarlık", ProductSummary = "Sarı baykuş anahtarlık", ProductPrice = 11_280 },
                 new Product() { ProductId = 9, ProductName = "Yeşil baykuş anahtarlık", ProductSummary = "Yeşil baykuş anahtarlık", ProductPrice = 85 },
