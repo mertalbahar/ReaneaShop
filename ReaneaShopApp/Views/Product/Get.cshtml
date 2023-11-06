@@ -9,17 +9,24 @@
     <div class="col-md-12 my-3">
         <div class="text-center">
             <h6 class="display-6">@Model.ProductName</h6>
-            <img class="img-fluid rounded-3 shadow my-3 w-75" src="..." alt="@Model.ProductName">
+            <img class="img-fluid rounded-3 shadow my-3 w-50" src="~/images/toka.jpg" alt="@Model.ProductName">
             <p>@Model.ProductSummary</p>
             <p class="lead text-danger">@Model.ProductPrice.ToString("C2")</p>
-            <div class="btn-group">
-                <a class="btn btn-outline-secondary" asp-controller="Home" asp-action="Index">
+            <form id="@Model.ProductId" asp-page="/cart" method="POST">
+                <div class="btn-group">
+                    <a class="btn btn-outline-secondary" asp-controller="Home" asp-action="Index">
                         <i class="fa-solid fa-house"></i> Home
                     </a>
-                <a class="btn btn-outline-secondary" asp-controller="Product" asp-action="Index">
-                    <i class="fa-solid fa-list"></i> Products
-                </a>
-            </div>
+                    <input type="hidden" asp-for="ProductId">
+                    @* <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()"> *@
+                    <button class="btn btn-outline-secondary mx-1" type="submit">
+                        <i class="fa fa-cart-plus"></i> Add to Cart
+                    </button>
+                    <a class="btn btn-outline-secondary" asp-controller="Product" asp-action="Index">
+                        <i class="fa-solid fa-list"></i> Products
+                    </a>
+                </div>
+            </form>
         </div>
     </div>
 </div>
