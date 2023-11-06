@@ -34,6 +34,7 @@ namespace ReaneaShopApp.Migrations
                     ProductName = table.Column<string>(type: "TEXT", nullable: false),
                     ProductSummary = table.Column<string>(type: "TEXT", nullable: true),
                     ProductPrice = table.Column<decimal>(type: "TEXT", nullable: false),
+                    ProductImageUrl = table.Column<string>(type: "TEXT", nullable: true),
                     CategoryId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
@@ -61,23 +62,23 @@ namespace ReaneaShopApp.Migrations
 
             migrationBuilder.InsertData(
                 table: "Products",
-                columns: new[] { "ProductId", "CategoryId", "ProductName", "ProductPrice", "ProductSummary" },
+                columns: new[] { "ProductId", "CategoryId", "ProductImageUrl", "ProductName", "ProductPrice", "ProductSummary" },
                 values: new object[,]
                 {
-                    { 1, 1, "Üçgen gri toka", 250m, "Üçgen gri toka" },
-                    { 2, 1, "Üçgen pembe toka", 1300m, "Üçgen pembe toka" },
-                    { 3, 1, "Üçgen turuncu toka", 250m, "Üçgen turuncu toka" },
-                    { 4, 2, "Cüzdan 1", 37m, "Cüzdan 1" },
-                    { 5, 2, "Cüzdan 2", 3865m, "Cüzdan 2" },
-                    { 6, 2, "Cüzdan 3", 805m, "Cüzdan 3" },
-                    { 7, 3, "Pembe baykuş anahtarlık", 120m, "Pembe baykuş anahtarlık" },
-                    { 8, 3, "Sarı baykuş anahtarlık", 11280m, "Sarı baykuş anahtarlık" },
-                    { 9, 3, "Yeşil baykuş anahtarlık", 85m, "Yeşil baykuş anahtarlık" },
-                    { 10, 4, "Kahverengi çiçek çanta", 420m, "Kahverengi çiçek çanta" },
-                    { 11, 4, "Pembe çiçek çanta", 120m, "Pembe çiçek çanta" },
-                    { 12, 4, "Mor çiçek çanta", 375m, "Mor çiçek çanta" },
-                    { 13, 5, "Marteniçka dilek bilekliği", 12m, "Marteniçka dilek bilekliği" },
-                    { 14, 6, "Kuzucuk", 12m, "Kuzucuk" }
+                    { 1, 1, "/images/toka.jpg", "Üçgen gri toka", 250m, "Üçgen gri toka" },
+                    { 2, 1, "/images/toka.jpg", "Üçgen pembe toka", 1300m, "Üçgen pembe toka" },
+                    { 3, 1, "/images/toka.jpg", "Üçgen turuncu toka", 250m, "Üçgen turuncu toka" },
+                    { 4, 2, "/images/cuzdan.jpg", "Cüzdan 1", 37m, "Cüzdan 1" },
+                    { 5, 2, "/images/cuzdan.jpg", "Cüzdan 2", 3865m, "Cüzdan 2" },
+                    { 6, 2, "/images/cuzdan.jpg", "Cüzdan 3", 805m, "Cüzdan 3" },
+                    { 7, 3, "/images/baykusanahtar.jpg", "Pembe baykuş anahtarlık", 120m, "Pembe baykuş anahtarlık" },
+                    { 8, 3, "/images/baykusanahtar.jpg", "Sarı baykuş anahtarlık", 11280m, "Sarı baykuş anahtarlık" },
+                    { 9, 3, "/images/baykusanahtar.jpg", "Yeşil baykuş anahtarlık", 85m, "Yeşil baykuş anahtarlık" },
+                    { 10, 4, "/images/kahvecanta.jpg", "Kahverengi çiçek çanta", 420m, "Kahverengi çiçek çanta" },
+                    { 11, 4, "/images/pembecanta.jpg", "Pembe çiçek çanta", 120m, "Pembe çiçek çanta" },
+                    { 12, 4, "/images/kahvecanta.jpg", "Mor çiçek çanta", 375m, "Mor çiçek çanta" },
+                    { 13, 5, "/images/martenicka.jpg", "Marteniçka dilek bilekliği", 12m, "Marteniçka dilek bilekliği" },
+                    { 14, 6, "/images/kuzucuk.jpg", "Kuzucuk", 12m, "Kuzucuk" }
                 });
 
             migrationBuilder.CreateIndex(

@@ -8,8 +8,8 @@
 <div class="row my-3">
     <div class="col-md-12 my-3">
         <div class="text-center">
-            <h6 class="display-6">@Model.ProductName</h6>
-            <img class="img-fluid rounded-3 shadow my-3 w-50" src="~/images/toka.jpg" alt="@Model.ProductName">
+            <h6 class="display-6">@Model.ProductName.ToUpper()</h6>
+            <img class="img-fluid rounded-3 shadow my-3 w-50" src="@Model?.ProductImageUrl" alt="@Model.ProductName">
             <p>@Model.ProductSummary</p>
             <p class="lead text-danger">@Model.ProductPrice.ToString("C2")</p>
             <form id="@Model.ProductId" asp-page="/cart" method="POST">
