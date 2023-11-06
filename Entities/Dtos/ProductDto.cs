@@ -13,6 +13,7 @@ namespace Entities.Dtos
 
         [Required(ErrorMessage = "Birim fiyat zorunludur.")]
         public decimal ProductPrice { get; init; }
+        public String? ProductImageUrl { get; set; }
         public int? CategoryId { get; init; }
     }
 }
