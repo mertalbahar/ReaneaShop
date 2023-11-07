@@ -28,19 +28,30 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" asp-page="/Contact">
                         <i class="fa fa-phone"></i>
                         İletişim
                     </a>
                 </li>
             </ul>
             <ul class="navbar-nav">
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Senin için bulalım?" aria-label="Search">
-                <button class="btn btn-outline-secondary" type="submit">
-                    <i class="fa fa-magnifying-glass"></i>
-                </button>
-            </form>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Senin için bulalım?"
+                        aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit">
+                        <i class="fa fa-magnifying-glass"></i>
+                    </button>
+                </form>
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-page="/Cart">
+                        <div class="position-relative mx-2">
+                            <i class="fa-solid fa-cart-shopping me-2"></i>
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                99+</span>
+                        </div>
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" target="_blank" asp-controller="Dashboard" asp-action="Index" asp-area="Admin">
                         Admin

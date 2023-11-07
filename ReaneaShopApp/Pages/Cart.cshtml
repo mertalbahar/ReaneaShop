@@ -1,0 +1,50 @@
+@page "/cart"
+@model CartModel
+
+<div>
+    <div class="display-6 text-center my-3">Sepet</div>
+    <table class="table table-hover text-end">
+        <thead>
+            <tr>
+                <th class="text-start">Ürün</th>
+                <th>Adet</th>
+                <th>Birim Fiyat</th>
+                <th>Alt Toplam</th>
+                <th class="border-0 pb-1" style="4rem">
+                    <button class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i></button>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var line in Model.Cart?.Lines ?? Enumerable.Empty<CartLine>())
+            {
+                <tr>
+                    <td class="text-start">@line.Product.ProductName</td>
+                    <td>@line.Quantity</td>
+                    <td>@line.Product.ProductPrice.ToString("c")</td>
+                    <td>@((line.Product.ProductPrice * line.Quantity).ToString("C2"))</td>
+                    <td class="border-0 pb-1" style="width: 4rem;">
+                        <form method="POST" asp-page-handler="Remove">
+                            <input type="hidden" name="id" value="@line.Product.ProductId">
+                            <input type="hidden" name="returnUrl" value="@Model.ReturnUrl">
+
+                            <button class="btn btn-sm btn-outline-danger" type="submit"><i class="fa fa-trash"></i></button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-start">Toplam Tutar: </td>
+                <td class="text-danger">@Model.Cart?.ComputeTotalValue().ToString("C2")</td>
+            </tr>
+        </tfoot>
+    </table>
+    <div class="text-center my-3">
+        <div class="btn-group">
+            @* <a class="btn btn-primary" href="@Model?.ReturnUrl">Alışverişe devam et</a> *@
+            @* <a class="btn btn-primary mx-2" asp-controller="Order" asp-action="Checkout">Satın Al</a> *@
+        </div>
+    </div>
+</div>
