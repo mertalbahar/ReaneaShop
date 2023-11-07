@@ -13,10 +13,20 @@
                 </div>
             </div>
             <p class="card-text">@Model?.ProductSummary</p>
-            <a class="btn btn-outline-secondary" asp-controller="Product" asp-action="GET"
-                asp-route-id="@Model.ProductId">
-                <i class="fa-solid fa-arrow-right"></i>
-            </a>
+            <form id="@Model.ProductId" asp-page="/cart" method="POST">
+                <input type="hidden" asp-for="ProductId" />
+                <input type="hidden" name="returnUrl" value="/Product/Get/@Model.ProductId" />
+
+                <div class="btn-group d-flex">
+                    <a class="btn btn-outline-secondary" asp-controller="Product" asp-action="GET"
+                        asp-route-id="@Model.ProductId">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    <button type="submit" class="btn btn-outline-secondary">
+                        <i class="fa fa-cart-plus"></i>
+                    </button>
+                </div>
+            </form>
         </div>
         <div class="card-footer text-center">İndirim</div>
     </div>
