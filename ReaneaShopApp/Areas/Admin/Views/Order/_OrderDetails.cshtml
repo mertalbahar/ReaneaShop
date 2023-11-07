@@ -1,0 +1,56 @@
+@model Order
+
+@{
+    var total = @Model.Lines.Sum(c => c.Product.ProductPrice * c.Quantity);
+}
+
+<div class="row shadow p-3 my-3">
+    <div class="col-md-3 border-1 border-dark p-3 bg-light shadow rounded">
+        <h5 class="display-5 text-center">
+            <i class="fa fa-address-book text-danger"></i>
+            <br />
+            @Model?.Name @Model?.Surname
+        </h5>
+        <p>@Model?.District</p>
+        <p>@Model?.Street</p>
+        <p>@Model?.Avenue</p>
+        <p>@Model?.City</p>
+        <p class="rounded-2 text-center p-3">
+            <span class="bg-warning p-2">Durumu</span>
+            <span class="bg-info p-2">@(Model.Shipped ? "Tamamlandı" : "Bekliyor")</span>
+        </p>
+    </div>
+    <div class="col-md-9">
+        <h6 class="display-6 mt-3 text-center">
+            Cart
+        </h6>
+        <ul class="list-group my-3">
+            <div class="d-flex justify-content-between">
+                <p class="m-0">@Model.OrderId</p>
+                <p class="m-0">@Model.OrderedAt</p>
+            </div>
+            @foreach (var cartItem in Model?.Lines)
+            {
+                <li class="list-group-item d-flex justify-content-between brand">
+                    @cartItem.Product.ProductName
+                    <b>
+                        @cartItem.Quantity * @cartItem.Product.ProductPrice.ToString("C2")
+                        = @((cartItem.Quantity * cartItem.Product.ProductPrice).ToString("C2"))
+                    </b>
+                </li>
+            }
+            <li class="list-group-item d-flex justify-content-between text-danger">
+                Total
+                <b>
+                    @total.ToString("C2")
+                </b>
+            </li>
+        </ul>
+        <div class="text-center mt-2 p-2">
+            <form method="POST" asp-action="Complete">
+                <input type="hidden" name="id" value="@Model.OrderId" />
+                <button class="btn btn-primary" type="submit" disabled="@Model.Shipped">Tamamla</button>
+            </form>
+        </div>
+    </div>
+</div>

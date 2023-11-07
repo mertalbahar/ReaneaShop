@@ -15,15 +15,15 @@
             <form id="@Model.ProductId" asp-page="/cart" method="POST">
                 <div class="btn-group">
                     <a class="btn btn-outline-secondary" asp-controller="Home" asp-action="Index">
-                        <i class="fa-solid fa-house"></i> Home
+                        <i class="fa-solid fa-house"></i> Anasayfa
                     </a>
                     <input type="hidden" asp-for="ProductId">
-                    @* <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()"> *@
+                    <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()">
                     <button class="btn btn-outline-secondary mx-1" type="submit">
-                        <i class="fa fa-cart-plus"></i> Add to Cart
+                        <i class="fa fa-cart-plus"></i> Sepete Ekle
                     </button>
                     <a class="btn btn-outline-secondary" asp-controller="Product" asp-action="Index">
-                        <i class="fa-solid fa-list"></i> Products
+                        <i class="fa-solid fa-list"></i> Ürünler
                     </a>
                 </div>
             </form>

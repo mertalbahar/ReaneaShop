@@ -13,10 +13,10 @@ namespace ReaneaShopApp.Pages
         public Cart Cart { get; set; }
         public string ReturnUrl { get; set; } = "/";
 
-        public CartModel(IServiceManager manager, Cart cart)
+        public CartModel(IServiceManager manager, Cart cartService)
         {
             _manager = manager;
-            Cart = cart;
+            Cart = cartService;
         }
 
         public void OnGet(string returnUrl)
@@ -32,7 +32,7 @@ namespace ReaneaShopApp.Pages
             {
                 Cart.AddItem(product, 1);
             }
-            return Page();
+            return RedirectToPage(new {returnUrl = returnUrl});
         }
 
         public IActionResult OnPostRemove(int id, string returnUrl)

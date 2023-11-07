@@ -46,9 +46,9 @@
                     <a class="nav-link" asp-area="" asp-page="/Cart">
                         <div class="position-relative mx-2">
                             <i class="fa-solid fa-cart-shopping me-2"></i>
-                            <span
-                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                99+</span>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                @await Component.InvokeAsync("CartSummary")
+                            </span>
                         </div>
                     </a>
                 </li>

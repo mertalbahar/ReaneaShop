@@ -15,7 +15,7 @@
             <p class="card-text">@Model?.ProductSummary</p>
             <form id="@Model.ProductId" asp-page="/cart" method="POST">
                 <input type="hidden" asp-for="ProductId" />
-                <input type="hidden" name="returnUrl" value="/Product/Get/@Model.ProductId" />
+                <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
 
                 <div class="btn-group d-flex">
                     <a class="btn btn-outline-secondary" asp-controller="Product" asp-action="GET"
@@ -28,6 +28,6 @@
                 </div>
             </form>
         </div>
-        <div class="card-footer text-center">İndirim</div>
+        <!-- <div class="card-footer text-center">İndirim</div> -->
     </div>
 </div>
