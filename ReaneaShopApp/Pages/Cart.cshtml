@@ -11,7 +11,7 @@
                 <th>Birim Fiyat</th>
                 <th>Alt Toplam</th>
                 <th class="border-0 pb-1" style="4rem">
-                    <button class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i></button>
+                    <!-- <button class="btn btn-sm btn-outline-danger"><i class="fa fa-trash"></i></button> -->
                 </th>
             </tr>
         </thead>
@@ -43,8 +43,8 @@
     </table>
     <div class="text-center my-3">
         <div class="btn-group">
-            @* <a class="btn btn-primary" href="@Model?.ReturnUrl">Alışverişe devam et</a> *@
-            @* <a class="btn btn-primary mx-2" asp-controller="Order" asp-action="Checkout">Satın Al</a> *@
+            <a class="btn btn-primary" href="@Model?.ReturnUrl">Alışverişe devam et</a>
+            <a class="btn btn-primary mx-2" asp-controller="Order" asp-action="Checkout">Satın Al</a>
         </div>
     </div>
 </div>

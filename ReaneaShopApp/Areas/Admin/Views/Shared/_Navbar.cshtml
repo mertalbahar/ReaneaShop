@@ -17,14 +17,17 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" asp-controller="Product" asp-action="Index">
-                        <i class="fa-solid fa-list"></i>
                         Ürünler (@await Component.InvokeAsync("ProductSummary"))
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" asp-controller="Category" asp-action="Index">
-                        <i class="fa-solid fa-bars"></i>
                         Kategoriler
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" asp-controller="Order" asp-action="Index" asp-area="Admin">
+                        Siparişler
                     </a>
                 </li>
             </ul>
