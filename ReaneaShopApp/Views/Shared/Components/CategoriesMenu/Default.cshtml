@@ -8,11 +8,16 @@
 </div>
 <div class="my-4">
     <ul class="list-group">
+        <a class="list-group-item list-group-item-action text-decoration-none fs-4" asp-action="Index"
+            asp-route-categoryId="">
+            Hepsi
+        </a>
         @foreach (var cat in Model)
         {
-            <li class="list-group-item">
-                <a href="#">@cat.CategoryName</a>
-            </li>
+            <a class="list-group-item list-group-item-action text-decoration-none" asp-action="Index"
+                asp-route-categoryId="@cat.CategoryId">
+                @cat.CategoryName
+            </a>
         }
     </ul>
 </div>

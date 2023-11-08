@@ -150,6 +150,9 @@ namespace ReaneaShopApp.Migrations
                     b.Property<string>("ProductSummary")
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("Showcase")
+                        .HasColumnType("INTEGER");
+
                     b.HasKey("ProductId");
 
                     b.HasIndex("CategoryId");
@@ -164,7 +167,8 @@ namespace ReaneaShopApp.Migrations
                             ProductImageUrl = "/images/toka.jpg",
                             ProductName = "Üçgen gri toka",
                             ProductPrice = 250m,
-                            ProductSummary = "Üçgen gri toka"
+                            ProductSummary = "Üçgen gri toka",
+                            Showcase = true
                         },
                         new
                         {
@@ -173,7 +177,8 @@ namespace ReaneaShopApp.Migrations
                             ProductImageUrl = "/images/toka.jpg",
                             ProductName = "Üçgen pembe toka",
                             ProductPrice = 1300m,
-                            ProductSummary = "Üçgen pembe toka"
+                            ProductSummary = "Üçgen pembe toka",
+                            Showcase = false
                         },
                         new
                         {
@@ -182,7 +187,8 @@ namespace ReaneaShopApp.Migrations
                             ProductImageUrl = "/images/toka.jpg",
                             ProductName = "Üçgen turuncu toka",
                             ProductPrice = 250m,
-                            ProductSummary = "Üçgen turuncu toka"
+                            ProductSummary = "Üçgen turuncu toka",
+                            Showcase = false
                         },
                         new
                         {
@@ -191,7 +197,8 @@ namespace ReaneaShopApp.Migrations
                             ProductImageUrl = "/images/cuzdan.jpg",
                             ProductName = "Cüzdan 1",
                             ProductPrice = 37m,
-                            ProductSummary = "Cüzdan 1"
+                            ProductSummary = "Cüzdan 1",
+                            Showcase = true
                         },
                         new
                         {
@@ -200,7 +207,8 @@ namespace ReaneaShopApp.Migrations
                             ProductImageUrl = "/images/cuzdan.jpg",
                             ProductName = "Cüzdan 2",
                             ProductPrice = 3865m,
-                            ProductSummary = "Cüzdan 2"
+                            ProductSummary = "Cüzdan 2",
+                            Showcase = false
                         },
                         new
                         {
@@ -209,7 +217,8 @@ namespace ReaneaShopApp.Migrations
                             ProductImageUrl = "/images/cuzdan.jpg",
                             ProductName = "Cüzdan 3",
                             ProductPrice = 805m,
-                            ProductSummary = "Cüzdan 3"
+                            ProductSummary = "Cüzdan 3",
+                            Showcase = false
                         },
                         new
                         {
@@ -218,7 +227,8 @@ namespace ReaneaShopApp.Migrations
                             ProductImageUrl = "/images/baykusanahtar.jpg",
                             ProductName = "Pembe baykuş anahtarlık",
                             ProductPrice = 120m,
-                            ProductSummary = "Pembe baykuş anahtarlık"
+                            ProductSummary = "Pembe baykuş anahtarlık",
+                            Showcase = true
                         },
                         new
                         {
@@ -227,7 +237,8 @@ namespace ReaneaShopApp.Migrations
                             ProductImageUrl = "/images/baykusanahtar.jpg",
                             ProductName = "Sarı baykuş anahtarlık",
                             ProductPrice = 11280m,
-                            ProductSummary = "Sarı baykuş anahtarlık"
+                            ProductSummary = "Sarı baykuş anahtarlık",
+                            Showcase = false
                         },
                         new
                         {
@@ -236,7 +247,8 @@ namespace ReaneaShopApp.Migrations
                             ProductImageUrl = "/images/baykusanahtar.jpg",
                             ProductName = "Yeşil baykuş anahtarlık",
                             ProductPrice = 85m,
-                            ProductSummary = "Yeşil baykuş anahtarlık"
+                            ProductSummary = "Yeşil baykuş anahtarlık",
+                            Showcase = false
                         },
                         new
                         {
@@ -245,7 +257,8 @@ namespace ReaneaShopApp.Migrations
                             ProductImageUrl = "/images/kahvecanta.jpg",
                             ProductName = "Kahverengi çiçek çanta",
                             ProductPrice = 420m,
-                            ProductSummary = "Kahverengi çiçek çanta"
+                            ProductSummary = "Kahverengi çiçek çanta",
+                            Showcase = true
                         },
                         new
                         {
@@ -254,7 +267,8 @@ namespace ReaneaShopApp.Migrations
                             ProductImageUrl = "/images/pembecanta.jpg",
                             ProductName = "Pembe çiçek çanta",
                             ProductPrice = 120m,
-                            ProductSummary = "Pembe çiçek çanta"
+                            ProductSummary = "Pembe çiçek çanta",
+                            Showcase = false
                         },
                         new
                         {
@@ -263,7 +277,8 @@ namespace ReaneaShopApp.Migrations
                             ProductImageUrl = "/images/kahvecanta.jpg",
                             ProductName = "Mor çiçek çanta",
                             ProductPrice = 375m,
-                            ProductSummary = "Mor çiçek çanta"
+                            ProductSummary = "Mor çiçek çanta",
+                            Showcase = false
                         },
                         new
                         {
@@ -272,7 +287,8 @@ namespace ReaneaShopApp.Migrations
                             ProductImageUrl = "/images/martenicka.jpg",
                             ProductName = "Marteniçka dilek bilekliği",
                             ProductPrice = 12m,
-                            ProductSummary = "Marteniçka dilek bilekliği"
+                            ProductSummary = "Marteniçka dilek bilekliği",
+                            Showcase = true
                         },
                         new
                         {
@@ -281,7 +297,8 @@ namespace ReaneaShopApp.Migrations
                             ProductImageUrl = "/images/kuzucuk.jpg",
                             ProductName = "Kuzucuk",
                             ProductPrice = 12m,
-                            ProductSummary = "Kuzucuk"
+                            ProductSummary = "Kuzucuk",
+                            Showcase = true
                         });
                 });
 

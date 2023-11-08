@@ -14,6 +14,8 @@ namespace Entities.Models
         [Required(ErrorMessage = "Soyisim alanı zorunludur.")]
         public String? Surname { get; set; }
 
+        public String FullName => $"{Name} {Surname.ToUpper()}";
+
         [Required(ErrorMessage = "Mahalle alanı zorunludur.")]
         public String? District { get; set; }
 

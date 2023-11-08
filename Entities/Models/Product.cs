@@ -12,5 +12,6 @@ namespace Entities.Models
         public String? ProductImageUrl { get; set; }
         public int? CategoryId { get; set; }
         public Category? Category { get; set; }
+        public bool Showcase { get; set; }
     }
 }
